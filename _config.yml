@@ -19,8 +19,6 @@ copyright_holder         : # "copyright" holder, defaults to the site.owner.name
 search                   : true # true (default)
 
 
-defer_ajax_page_loads    : false
-
 # Site Logo
 logo: /assets/images/88x88.png
 
@@ -91,23 +89,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# You can an import another RubiyuJekyll theme directly
-# 1. in your Gemfile `gem "jekyll-theme-scientia"`
-# 2. uncomment the following line
-# theme: jekyll-theme-scientia
-
-# Fields:
-#     layout: single (default)
-#     author_profile: true (default)
-#     read_time: true (default)
-#     comments: false (default)
-#     share: true (default)
-#     related: true (default)
-#     show_date: false (default)
-#     classes: wide (default)
-#     sidebar:
-#       nav: "sidebar2" (default)
 
 # Defaults
 defaults:
@@ -183,8 +164,7 @@ arc:
   # enable, disable
   nav: enable
 
-  # This options controls whether to show the welcome bar or not.  There are
-  # several options:
+  # This options controls whether to show the welcome bar or not.
   #   false: disable
   #   true: enable (default)
   #   loggedin: only show for logged-in users
@@ -197,14 +177,12 @@ arc:
   search: true
 
   # For lazy loading of images
-  # Not yet implemented
   lazy_load_images: true
 
   # For code blocks
   copy_code: true
 
   # For table of contents in lists.
-  # There are a few options:
   #   sticky: table of contents is sticky on desktop and mobile (default)
   #   hide: table of contents is hidden on mobile
   #   normal: table of contents is always shown
@@ -214,7 +192,6 @@ arc:
   anchor_links: true
 
   # Some footer text
-  # There are several options:
   #   customize: customize the footer text
   #   hide: hide the footer text
   #   minimal: show the minimal footer text (default)
@@ -248,7 +225,6 @@ include_cache:
 
 # Plugin: jekyll-gist
 gist:
-  # The following are the default options
   username:
   client_id:
   client_secret:
@@ -261,7 +237,6 @@ algolia:
 
 # Plugin: jekyll-scholar
 scholar:
-  # The following are the default options
   style: _bibliography/apa.csl
   locale: en
   sort_by: year
@@ -277,7 +252,7 @@ scholar:
   query: ""
 
 # Plugin: jekyll-tagging
-tag_names: # some tags
+tag_names:
 
 # site.collections
 collections:
@@ -294,82 +269,11 @@ collections:
   pages:
     output: true
 
-# Front Matter Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      show_date: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: single
-      author_profile: true
-      share: true
-
 # This is the default format.
-# Permitted values: ["xml", "json", "rss"]
 builds:
     format: html
 
-# The default is to use LSI (Latent Semantic Indexing)
-# which is disabled by default in GitHub Pages.
-# You can enable it by uncommenting the following line
-# lsi: true
-
-# For-moder classic
-instagram:
-  username: ""
-
-# For-mobweb
-url:
-  # Is it necessary to set a url?  "yes" or "no"
-  # This will default to "no" if not set.
-  # It is only necessary to set this if you are using
-  # GitHub Project Pages (i.e., a page that is not
-  # named "username.github.io")
-  # project_page: yes
-
 # Outputting
-# This will default to HTML if not set.
-# Permitted values: ["html", "markdown", "md", "xml", "json", "rss"]
-# You can also use "home" or "post" to apply to all posts or pages.
-# There is also a special "script" to apply to all JavaScript files.
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -378,7 +282,6 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    # Use the default indiewoxo markup for code fencing.
     disable: false
 
 # Plugins (previously gems:)
@@ -390,86 +293,28 @@ plugins:
   - jekyll-include-cache
   - jekyll-redirect-from
 
-author:
-  name             : "Junteng Liu"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "First-year PhD candidate at HKUST NLP Group. Research focuses on natural language processing and machine learning."
-  location         : "Hong Kong"
-  email            : "jliugi@connect.ust.hk"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:jliugi@connect.ust.hk"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/Vicent0205"
-    - label: "Google Scholar"
-      icon: "fab fa-fw fa-google"
-      url: "https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate"
-    - label: "X (Twitter)"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/junteng88716710"
-
 # The plugin `jekyll-include-cache` will be enabled, and
 # for sites without a Gemfile, the following plugins will be installed.
 # If you have a Gemfile, uncomment the following line.
 #REMOVE_AFFILIATE_LINKS: true
 
 # This sets the default theme to use for installs without a Gemfile.
-# With a Gemfile, this is set in the Gemfile as `gem "minimal-mistakes"`
-# and in _config.yml as `theme: "minimal-mistakes"`.
 remote_theme             : "academicpages/academicpages.github.io"
 
-# The skin.  Kelso, Hyde, et.
+# The skin.
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt",
-                                  # "neon", "mint", "sunrise", "default"
-
-#  The default is to exclude the site's own files from the search index
-#  by uncommenting the following line.
-# search:
-#   omitted: true
-
-# This may be set to "no" for sites that want to use the
-# "=_" "_=" shortcode for inserting a variable into the site.
-# https://github.com/authorURAL/uro
-# no: "no"
-
-# This is the default path to the theme's main stylesheet.
-# If you want to use your own stylesheet, uncomment the following line
-# and change the path to your own stylesheet.
-# MINIMAL_MISTAKES_THEME_CSS: "assets/css/main.css"
-
-# There are many more settings in _sass/minimal-mistakes.scss and
-# assets/css/main.scss that you can tweak to your liking.
-# But these are the main ones.
 
 # Table of Contents
 toc:
   min: 2
   max: 3
   list_number: true
-  # The URL the TOC links to. If set, the TOC will be hidden on this page.
-  # no_toc: /pages/no-toc/
-  # custom_classes: "tocreset"
 
 # Site comments (owerwrite)
 comments:
-  provider: false # false (default), "disqus", "facebook", "google+", "instagram", "linkedin", "mailchimp", "medium", "pinterest", "reddit", "slack", "tumblr", "twitter", "github", "custom"
+  provider: false # false (default)
   disqus:
-    shortname: # YOUR-DISQUS-SHORTNAME
+    shortname:
 
 # Other text
 untitled: "(Untitled)"
-page topology:
-  note: "Note:"
-  example: "Example:"
-
-# Table of default local overlays
-# _./_includes/ clutters
-# with custom includes, used for funs.
-# https://github.com/pages-themes/minimal/
-
-# After changes, please check:
-# https://rake-compiler-docs.tasks.org/en/latest/unicorns.html
-
-# End of file
